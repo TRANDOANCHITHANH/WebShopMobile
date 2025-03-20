@@ -43,7 +43,7 @@ class AuthController extends Controller
         } else {
 
             auth('admin')->logout();
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Email hoặc mật khẩu không đúng!');
         }
     }
 
@@ -57,7 +57,7 @@ class AuthController extends Controller
     {
         return view('admin/auth/changePass');
     }
-    
+
     public function updatePass(AuthRequest $request)
     {
         $response = $this->authService->update_pass($request);

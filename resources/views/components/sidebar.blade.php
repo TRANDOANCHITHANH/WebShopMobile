@@ -4,7 +4,7 @@
             @foreach ($categories as $category)
             @if ($category['parent_id'] == 0)
             <div class="nav-item dropright">
-                <a href="#" class="nav-link parent-category">
+                <a href="#" class="nav-link parent-category" data-id="{{ $category['id'] }}">
                     {{ $category['name'] }}
                     <i class="fa fa-angle-right float-right mt-1"></i>
                 </a>
@@ -16,7 +16,7 @@
                     </div>
                     <div class="dropdown-menu-content">
                         @foreach ($category['children'] as $item)
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" data-id="{{ $item['id'] }}">
                             <span>{{ $item['name'] }}</span>
                         </a>
                         @endforeach

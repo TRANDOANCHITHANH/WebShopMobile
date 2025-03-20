@@ -1,6 +1,8 @@
    <div class="app-header header-shadow">
        <div class="app-header__logo">
-           <div class="logo-src"></div>
+           <div class="logo-src" style="width: 120px;">
+               <a href="{{route('guest.index')}}"><img src="{{asset('uploads/5Slogoadmin.png')}}" alt=""></a>
+           </div>
            <div class="header__pane ml-auto">
                <div>
                    <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
@@ -106,6 +108,10 @@
                        </div>
                    </div>
                </div>
+               <div class="ml-3">
+                   <a href="{{ route('guest.index') }}" class="btn btn-outline-primary">Trang người dùng</a>
+               </div>
+
            </div>
        </div>
    </div>

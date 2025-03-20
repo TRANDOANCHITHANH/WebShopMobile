@@ -39,7 +39,7 @@
                       if (result.length > 0) {
                           $('#pagination').pagination({
                               dataSource: result,
-                              pageSize: 8,
+                              pageSize: 10,
                               formatResult: function(data) {
 
                               },

@@ -352,6 +352,19 @@
         });
     });
 </script>
+<script>
+    $(document).ready(function() {
+        $(".parent-category, .dropdown-item").on("click", function(e) {
+            e.preventDefault();
+
+            let categoryId = $(this).data("id");
+            if (!categoryId) return;
+
+            let url = "{{ route('guest.productByCategory') }}?category_id=" + categoryId;
+            window.location.href = url;
+        });
+    });
+</script>
 @if (session('success'))
 <script>
     Swal.fire({

@@ -270,7 +270,7 @@ use App\Enums\StatusOrderEnum;
                 success: function(result) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Hủy thành công',
+                        title: 'Cập nhật thành công',
                         showConfirmButton: false,
                         timer: 1500
                     })

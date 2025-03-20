@@ -26,7 +26,7 @@
         <img src="{{ asset('uploads/5Slogo.png') }}" alt="Logo" style="width: 200px;">
         <h4 class="mb-4">Đăng Nhập</h4>
         <form method="POST" action="{{ route('login') }}">
-            <input type="hidden" name="_token" value="WxZW2vw89QaBaoJoqn6UYfHaMaObKuawp2fPvmQf">
+            @csrf
 
             <div class="mb-3">
                 <input type="email" class="form-control" name="email" placeholder="Email" required>

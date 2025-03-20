@@ -31,7 +31,30 @@ class ProductController extends Controller
             'categories' => Category::with('children')->get()->toArray()
         ]);
     }
+    public function productByCategory(Request $request)
+    {
+        $query = Product::with(['Img', 'Brand', 'ProductSize'])->where('status', '1');
+        if ($request->has('category_id') && !empty($request->category_id)) {
+            $categoryId = $request->category_id;
+            $category = Category::with('children')->find($categoryId);
+            if ($category) {
+                $categoryIds = $category->children->pluck('id')->toArray();
+                $categoryIds[] = $categoryId; //
+                $query->whereIn('category_id', $categoryIds);
+            } else {
+                $query->where('category_id', $categoryId);
+            }
+        }
+        $products = $query->paginate(12);
 
+        return view('guest.product.product_by_category', [
+            'brands' => Brand::get()->toArray(),
+            'notification' => Notification::get(),
+            'categories' => Category::with('children')->get()->toArray(),
+            'products' => $products,
+            'selectedCategory' => $request->category_id
+        ]);
+    }
     public function listProduct(Request $request)
     {
 

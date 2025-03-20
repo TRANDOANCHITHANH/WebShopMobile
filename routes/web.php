@@ -175,7 +175,7 @@ Route::group(['as' => 'guest.', 'namespace' => 'Guest'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/products-by-category/{id}', [HomeController::class, 'getProductsByCategory'])->name('guest.products.by_category');
     Route::get('/shop', [GuestProductController::class, 'index'])->name('shop');
-    Route::get('/get-products-by-category', [GuestProductController::class, 'getProductsByCategory']);
+    Route::get('/productByCategory', [GuestProductController::class, 'productByCategory'])->name('productByCategory');
     Route::get('{slug}/size:{size}-{type}/shop-detail', [GuestProductController::class, 'detail'])->name('detail');
     Route::group(['prefix' => 'product', 'as' => 'product.', 'namespace' => 'Guest'], function () {
         Route::get('/list-product', [GuestProductController::class, 'listProduct'])->name('list_product');

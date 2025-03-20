@@ -75,7 +75,7 @@ use App\Enums\PayMentMethodEnum;
                     <div class="col-12 form-group">
                         <label>Tên</label>
                         <input class="form-control" type="text" name="name" placeholder="Tên của bạn"
-                            value="{{ old('email', $infoCustomer->name ?? '') }}">
+                            value="{{ old('name', $infoCustomer->name ?? '') }}">
                         @if ($errors->has('name'))
                         <div class="text-danger">{{ $errors->first('name') }}</div>
                         @endif
@@ -83,7 +83,7 @@ use App\Enums\PayMentMethodEnum;
                     <div class="col-12 form-group">
                         <label>Số điện thoại</label>
                         <input class="form-control" type="text" name="phone" placeholder="Số điện thoại"
-                            value="{{ old('phone') }}">
+                            value="{{ old('phone',$infoCustomer->phone ?? '') }}">
                         @if ($errors->has('phone'))
                         <div class="text-danger">{{ $errors->first('phone') }}</div>
                         @endif
@@ -105,7 +105,7 @@ use App\Enums\PayMentMethodEnum;
                     <div class="col-12 form-group">
                         <label>Địa chỉ</label>
                         <input class="form-control" type="text" name="address" placeholder="Địa chỉ cụ thể"
-                            value="{{ old('address') }}">
+                            value="{{ old('address', $infoCustomer->address) }}">
                         @if ($errors->has('address'))
                         <div class="text-danger">{{ $errors->first('address') }}</div>
                         @endif
@@ -121,7 +121,7 @@ use App\Enums\PayMentMethodEnum;
                     <div class="col-12 form-group">
                         <label>Quốc gia</label>
                         <input class="form-control" type="text" name="country" placeholder="Quốc gia"
-                            value="{{ old('country') }}">
+                            value="{{ old('country',$infoCustomer->country) }}">
                         @if ($errors->has('country'))
                         <div class="text-danger">{{ $errors->first('country') }}</div>
                         @endif
@@ -139,7 +139,7 @@ use App\Enums\PayMentMethodEnum;
         </div>
         <div class="col-lg-4">
 
-            <div class="mb-5">
+            <!-- <div class="mb-5">
                 <div class="input-group">
                     <input type="text" class="form-control p-4 discount-code" name="discountCode"
                         placeholder="Coupon Code" value="{{ $discountCode }}">
@@ -147,13 +147,13 @@ use App\Enums\PayMentMethodEnum;
                         <button class="btn btn-primary apply-discount" type="button">Apply Coupon</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="card border-secondary mb-5">
                 <div class="card-header bg-secondary border-0">
                     <h4 class="font-weight-semi-bold m-0">Order Total</h4>
                 </div>
                 <div class="card-body">
-                    <h5 class="font-weight-medium mb-3">Products</h5>
+                    <h5 class="font-weight-medium mb-3">Sản phẩm</h5>
                     @forelse ($listCart as $item)
                     <div class="d-flex justify-content-between">
                         <p> {{ $item['product_color']['product_size']['product']['name'] }}</p>
@@ -167,11 +167,11 @@ use App\Enums\PayMentMethodEnum;
                     @endforelse
                     <hr class="mt-0">
                     <div class="d-flex justify-content-between mb-3 pt-1">
-                        <h6 class="font-weight-medium">Subtotal</h6>
+                        <h6 class="font-weight-medium">Thành tiền</h6>
                         <h6 class="font-weight-medium">{{ number_format($totalPrice, 0, ',', ',') }} đ</h6>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-medium">Shipping</h6>
+                        <h6 class="font-weight-medium">Phí vận chuyển</h6>
                         <input type="hidden" name="price_ship" value="{{ $ship }}" id="">
                         <h6 class="font-weight-medium">{{ number_format($ship, 0, ',', ',') }} đ</h6>
                     </div>
@@ -183,7 +183,7 @@ use App\Enums\PayMentMethodEnum;
                 </div>
                 <div class="card-footer border-secondary bg-transparent">
                     <div class="d-flex justify-content-between mt-2">
-                        <h5 class="font-weight-bold">Total</h5>
+                        <h5 class="font-weight-bold">Tổng tiền</h5>
                         <h5 class="font-weight-bold total-price">
                             {{ number_format($totalPrice - $discountPrice + 20000, 0, ',', ',') }} đ
                         </h5>
@@ -192,21 +192,21 @@ use App\Enums\PayMentMethodEnum;
             </div>
             <div class="card border-secondary mb-5">
                 <div class="card-header bg-secondary border-0">
-                    <h4 class="font-weight-semi-bold m-0">Payment</h4>
+                    <h4 class="font-weight-semi-bold m-0">Phương thức thanh toán</h4>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
                         <div class="custom-control custom-radio">
                             <input type="radio" class="custom-control-input payment" name="payment_method"
                                 value={{ PayMentMethodEnum::VNPAY }} id="vnpay">
-                            <label class="custom-control-label" for="vnpay">Paypal</label>
+                            <label class="custom-control-label" for="vnpay">Ví điện tử VNPAY</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-radio">
                             <input type="radio" class="custom-control-input payment"
                                 name="payment_method" value={{ PayMentMethodEnum::DIRECT }} id="directcheck">
-                            <label class="custom-control-label" for="directcheck">Direct Check</label>
+                            <label class="custom-control-label" for="directcheck">Thanh toán khi nhận hàng</label>
                         </div>
                     </div>
 
