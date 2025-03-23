@@ -349,11 +349,11 @@ use App\Enums\TypeSizeEnum;
         <div class="col">
             <div class="owl-carousel related-carousel">
                 @forelse ($relateProduct as $item)
-                <div class="card product-item border-0">
+                <div class="card product-item border-0" style="width: 250px;">
                     <div class="card product-item border-0 mb-4">
                         <div
                             class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100 img-product"
+                            <img class="img-fluid img-product"
                                 src="{{ asset('storage/Product' . '/' . $item['img'][0]['path']) }}"
                                 alt="">
                         </div>

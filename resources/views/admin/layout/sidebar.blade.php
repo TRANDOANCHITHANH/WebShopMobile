@@ -32,24 +32,25 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li class="app-sidebar__heading">Menu</li>
+                <li class="app-sidebar__heading text-center">Admin</li>
 
                 <li class="mm-active">
                     <a href="#">
-                        <i class="bi bi-menu-button-wide mr-2"></i>Ứng dụng
+                        <i class="bi bi-menu-button-wide mr-2"></i>Bảng điều khiển
                         <i class="bi bi-caret-down-fill"></i>
                     </a>
                     <ul>
                         <li>
                             <a href="{{ route('admin.index') }}">
-                                <i class="metismenu-icon"></i>Dash board
+                                <i class="metismenu-icon"></i>Trang chủ
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.banner.index') }}">
-                                <i class="metismenu-icon"></i>Banner
+                            <a href="{{ route('admin.order.index') }}">
+                                <i class="metismenu-icon"></i>Đơn hàng
                             </a>
                         </li>
+
                         <li>
                             <a href="{{ route('admin.product.index') }}" class="">
                                 <i class="metismenu-icon"></i>Sản phẩm
@@ -80,11 +81,7 @@
                                 <i class="metismenu-icon"></i>Thông tin khách hàng
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route('admin.order.index') }}">
-                                <i class="metismenu-icon"></i>Đơn hàng
-                            </a>
-                        </li>
+
                         <li>
                             <a href="{{ route('admin.discount.index') }}">
                                 <i class="metismenu-icon"></i>Mã giảm giá
@@ -93,6 +90,11 @@
                         <li>
                             <a href="{{ route('admin.mailbox.index') }}">
                                 <i class="metismenu-icon"></i>Lời nhắn của khách hàng
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.banner.index') }}">
+                                <i class="metismenu-icon"></i>Banner
                             </a>
                         </li>
                     </ul>

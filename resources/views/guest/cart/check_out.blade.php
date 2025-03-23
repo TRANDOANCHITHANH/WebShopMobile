@@ -139,7 +139,7 @@ use App\Enums\PayMentMethodEnum;
         </div>
         <div class="col-lg-4">
 
-            <!-- <div class="mb-5">
+            <div class="mb-5">
                 <div class="input-group">
                     <input type="text" class="form-control p-4 discount-code" name="discountCode"
                         placeholder="Coupon Code" value="{{ $discountCode }}">
@@ -147,7 +147,7 @@ use App\Enums\PayMentMethodEnum;
                         <button class="btn btn-primary apply-discount" type="button">Apply Coupon</button>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="card border-secondary mb-5">
                 <div class="card-header bg-secondary border-0">
                     <h4 class="font-weight-semi-bold m-0">Order Total</h4>

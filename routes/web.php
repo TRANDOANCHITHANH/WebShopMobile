@@ -218,6 +218,8 @@ Route::group(['as' => 'guest.', 'namespace' => 'Guest'], function () {
     Route::group(['prefix' => 'account', 'as' => 'account.', 'namespace' => 'Guest'], function () {
         Route::get('/', [AccountController::class, 'index'])->name('index');
         Route::put('/update', [AccountController::class, 'update'])->name('update');
+        Route::get('/change', [AccountController::class, 'showChanepassForm'])->name('change');
+        Route::post('/change', [AccountController::class, 'changePass'])->name('password.update');
     });
 
     Route::group(['prefix' => 'coupon', 'as' => 'coupon.', 'namespace' => 'Guest'], function () {

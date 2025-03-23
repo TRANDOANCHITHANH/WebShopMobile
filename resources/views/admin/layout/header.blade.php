@@ -1,7 +1,7 @@
    <div class="app-header header-shadow">
        <div class="app-header__logo">
            <div class="logo-src" style="width: 120px;">
-               <a href="{{route('guest.index')}}"><img src="{{asset('uploads/5Slogoadmin.png')}}" alt=""></a>
+               <a href="{{route('admin.index')}}"><img src="{{asset('uploads/5Slogoadmin.png')}}" alt=""></a>
            </div>
            <div class="header__pane ml-auto">
                <div>

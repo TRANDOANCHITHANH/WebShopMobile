@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Services\Guest\Home\HomeService;
 use App\Services\Guest\Order\OrderService;
 use App\Http\Requests\Account\AccountRequest;
+use App\Http\Requests\ChangePasswordRequest;
 use App\Services\Guest\Account\AccountService;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -40,5 +42,15 @@ class AccountController extends Controller
         } else {
             return redirect()->back()->with('success', 'Cập nhật thông tin thành công');
         }
+    }
+    public function showChanepassForm()
+    {
+        return view('auth.passwords.change');
+    }
+    public function changePass(ChangePasswordRequest $request)
+    {
+        $this->accountService->update_password(Auth::user(), $request->new_password);
+
+        return redirect()->back()->with('success', 'Mật khẩu đã được cập nhật thành công!');
     }
 }

@@ -113,7 +113,7 @@
                 <div class='error-page-bsw_content'>
                     <div class='intro_label'>
                         <h2 class='_title'><i aria-hidden='true' class='fa fa-gg' style='margin:0 20px 0 0' />404 - PAGE NOT FOUND<i aria-hidden='true' class='fa fa-gg' style='margin:0 0 0 20px' /></h2>
-                        <p>Lỗi cmnr, sao bạn lạc trôi tới đây được vậy!?</p>
+                        <p>Lỗi</p>
                         <a class='btn-error-page' href='/contact'>Liên hệ - báo lỗi</a><a class='btn-error-page' href='/'>Về trang chủ</a><a class='btn-error-page' href='#go_back' onclick='goBack()'>Quay lại trang trước</a>
                     </div>
                 </div>

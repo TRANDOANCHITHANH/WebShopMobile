@@ -355,7 +355,7 @@
 <script>
     $(document).ready(function() {
         $(".parent-category, .dropdown-item").on("click", function(e) {
-            e.preventDefault();
+            // e.preventDefault();
 
             let categoryId = $(this).data("id");
             if (!categoryId) return;

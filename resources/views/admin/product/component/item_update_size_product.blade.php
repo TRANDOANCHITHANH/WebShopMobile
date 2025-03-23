@@ -18,6 +18,9 @@
             <option value="">--Chọn--</option>
             <option value="1" {{ $porductSize['type_size'] == 1 ? 'selected' : '' }}>Inch</option>
             <option value="2" {{ $porductSize['type_size'] == 2 ? 'selected' : '' }}>GB</option>
+            <option value="3" {{ $porductSize['type_size'] == 3 ? 'selected' : '' }}>mAh</option>
+            <option value="4" {{ $porductSize['type_size'] == 4 ? 'selected' : '' }}>m</option>
+            <option value="5" {{ $porductSize['type_size'] == 5 ? 'selected' : '' }}>W</option>
         </select>
         <p>
         <div class="error error-type_size"></div>

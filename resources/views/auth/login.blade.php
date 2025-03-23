@@ -1,5 +1,5 @@
 @extends('layouts.default')
-
+@section('title', 'Đăng nhập')
 @section('content')
 <style>
     .login-container {
@@ -25,6 +25,16 @@
     <div class="login-container text-center">
         <img src="{{ asset('uploads/5Slogo.png') }}" alt="Logo" style="width: 200px;">
         <h4 class="mb-4">Đăng Nhập</h4>
+        @if ($errors->has('email'))
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <strong>⚠️ Lỗi!</strong> {{ $errors->first('email') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
 

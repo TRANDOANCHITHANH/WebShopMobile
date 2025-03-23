@@ -57,7 +57,7 @@
             <div class="row pb-3">
                 @forelse ($products as $product)
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4 product-item animate__animated animate__fadeInUp" style="max-width: 20%;">
-                    <div class="card border-0 item-product">
+                    <div class="card border-0 item-product" style="min-height: 300px;">
                         <div class="card-header position-relative overflow-hidden bg-transparent border p-0">
                             <a href="{{ route('guest.detail', ['slug' => $product->slug, 'size' => $product->ProductSize[0]->size, 'type' => $product->ProductSize[0]->type_size]) }}">
                                 <img class="img-fluid img-product" src="{{ asset('storage/Product/' . $product->img[0]->path) }}" alt="">

@@ -62,6 +62,9 @@ use App\Enums\TypeSizeEnum;
                                     <option value="">--Chọn--</option>
                                     <option value="1">Inch</option>
                                     <option value="2">GB</option>
+                                    <option value="3">mAh</option>
+                                    <option value="4">m</option>
+                                    <option value="5">W</option>
                                 </select>
                                 <p>
                                 <div class="error error-type_size"></div>

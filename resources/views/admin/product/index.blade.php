@@ -2,12 +2,6 @@
 @section('title', 'Quản lý sản phẩm')
 @push('css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-<style>
-    .btn-primary {
-        background-color: red;
-        border-color: red;
-    }
-</style>
 @endpush
 @section('content')
 <div class="app-main__inner">

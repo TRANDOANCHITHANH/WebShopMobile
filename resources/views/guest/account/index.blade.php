@@ -105,6 +105,9 @@ use App\Enums\StatusOrderEnum;
                                     <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <a class="btn btn-primary" href="{{route('guest.account.change')}}">Đổi mật khẩu</a>
+                                </div>
                                 <div class="text-right mt-3 mb-4" style="margin-right: 20px">
                                     <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                                 </div>

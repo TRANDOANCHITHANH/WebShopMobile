@@ -40,7 +40,7 @@
                 </svg>
             </button>
             <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton" style="min-width: auto;">
-                <a href="{{ 'login' }}" class="dropdown-item">Đăng nhập</a>
+                <a href="{{ 'login' }}" class="dropdown-item a">Đăng nhập</a>
                 <a href="{{ 'register' }}" class="dropdown-item">Đăng kí</a>
             </div>
             @endif

@@ -9,7 +9,7 @@ use App\Models\Notification;
 use App\Services\BaseService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Hash;
 
 class AccountService extends BaseService
 {
@@ -73,5 +73,10 @@ class AccountService extends BaseService
                 'error' => $e
             ];
         }
+    }
+    public function update_password($user, $newPassword)
+    {
+        $user->password = Hash::make($newPassword);
+        $user->save();
     }
 }
